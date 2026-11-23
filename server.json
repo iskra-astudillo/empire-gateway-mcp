@@ -1,0 +1,33 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "com.eliteaiempire/empire-gateway",
+  "title": "Empire Gateway",
+  "description": "Read the model IDs available to your Empire Gateway API key.",
+  "version": "1.0.0",
+  "websiteUrl": "https://auth.eliteaiempire.com/mcp-docs/empire-gateway",
+  "repository": {
+    "url": "https://github.com/iskra-astudillo/empire-gateway-mcp",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://auth.eliteaiempire.com/mcp/empire-gateway",
+      "headers": [
+        {
+          "name": "Authorization",
+          "description": "MCP read key from the connection guide.",
+          "value": "Bearer {read_key}",
+          "isRequired": true,
+          "variables": {
+            "read_key": {
+              "description": "Your MCP read key",
+              "isRequired": true,
+              "isSecret": true
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
